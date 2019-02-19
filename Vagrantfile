@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.box = "bento/centos-7.3"
-  config.vm.network "private_network", ip: "192.168.33.13"
+  config.vm.network "private_network", ip: "192.168.33.14"
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "provisioning/site.yml"

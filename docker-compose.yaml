@@ -33,7 +33,7 @@ services:
       - ftp
     image: wordpress:latest
     ports:
-      - '8000:80'
+      - '80:80'
     restart: always
     volumes: ['./src:/var/www/html']
     environment:
