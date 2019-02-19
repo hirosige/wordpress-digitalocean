@@ -1,0 +1,11 @@
+---
+- hosts:  all
+  become: yes
+
+  roles:
+  - { role: init                   }
+  - { role: install_basics         }
+  - { role: docker                 }
+  - { role: docker-compose         }
+  - { role: npm                    }
+  - { role: terraform              }

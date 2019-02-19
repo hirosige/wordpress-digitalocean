@@ -1,0 +1,9 @@
+- name: add docker repo
+  command: yum-config-manager --add-repo "{{docker_repo}}"
+  become: yes
+
+- name: install latest docker
+  yum: name=docker-ce state=latest
+
+- name: start docker
+  service: name=docker state=started enabled=yes

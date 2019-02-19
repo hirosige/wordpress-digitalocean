@@ -1,0 +1,12 @@
+- name: Download file from nodesource
+  get_url:
+    url: https://rpm.nodesource.com/setup_11.x
+    dest: /usr/local/src
+
+- name: exec shell nodejs installer
+  command: bash setup_11.x
+  args:
+    chdir: /usr/local/src
+
+- name: yum install npm
+  yum: name=nodejs state=latest

@@ -1,0 +1,19 @@
+{
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "./provisioning/site.yml"
+    }
+  ],
+  "builders": [
+    {
+      "type": "digitalocean",
+      "snapshot_name": "my-blog",
+      "ssh_username": "root",
+      "api_token": "{{ user `token` }}",
+      "image": "centos-7-x64",
+      "region": "sgp1",
+      "size": "512mb"
+    }
+  ]
+}
